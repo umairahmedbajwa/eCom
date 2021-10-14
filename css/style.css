@@ -5,6 +5,7 @@
 	--black: #000000;
 	--blue: #40bfff;
 	--blueMain: #33a0ff;
+	--blueFooter: #bcddfe;
 	--dark: #373737;
 	--darkBlue: #223263;
 	--gray: #dfdede;
@@ -17,6 +18,7 @@
 	--skyBlue: #bcddfe;
 	--white: #ffffff;
 	--yellow: #ffc600;
+	--sharpBlue: #03a9f4;
 }
 
 html {
@@ -36,6 +38,7 @@ body {
 
 * {
 	box-sizing: border-box;
+	outline: 1px solid red;
 }
 
 /* Typography CSS */
@@ -87,8 +90,13 @@ p + p {
 	background-color: var(--blue) !important;
 	opacity: 1 !important;
 }
-.p-0 {
-	padding: 0;
+
+.darkBlue {
+	color: var(--darkBlue);
+}
+
+.sharpBlue {
+	color: var(--sharpBlue);
 }
 
 .neutral {
@@ -99,12 +107,57 @@ p + p {
 	background-color: var(--netural);
 }
 
+.p-0 {
+	padding: 0;
+}
+
 .p-1 {
 	padding: 10px;
 }
 
+.py-2 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.py-3 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.py-4 {
+	padding-top: 40px !important;
+	padding-bottom: 40px !important;
+}
+
+.py-5 {
+	padding-top: 60px !important;
+	padding-bottom: 60px !important;
+}
+
+.px-4 {
+	padding-left: 40px !important;
+	padding-right: 40px !important;
+}
+
 .m-0 {
 	margin: 0;
+}
+
+.mt-0 {
+	margin-top: 0 !important;
+}
+
+.mt-4 {
+	margin-top: 40px !important;
+}
+
+.mt-10 {
+	margin-top: 210px !important;
+}
+
+.ml-10 {
+	margin-left: 200px !important;
 }
 .container {
 	max-width: 1200px;
@@ -121,9 +174,24 @@ p + p {
 	display: none !important;
 }
 
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-underline {
+	text-decoration: underline;
+}
 /* CSS Grid */
 .col .box {
-	background-color: rgb(138, 255, 226);
+	background-color: var(--blueFooter);
 	display: block;
 	height: 100px;
 }
@@ -375,6 +443,41 @@ ul {
 .slder {
 	position: relative;
 }
+.slider {
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.slick-prev {
+	left: 25px;
+}
+
+.slick-next {
+	right: 25px;
+}
+
+.slick-next,
+.slick-prev {
+	z-index: 99;
+}
+
+.slick-prev:before {
+	color: var(--light);
+	font-size: 30px;
+	font-weight: 800;
+}
+
+.slick-next:before {
+	/* content: ">"; */
+	/* color: var(--light); */
+	/* background-color: var(--black); */
+	/* border-radius: 50%; */
+	font-size: 30px;
+	font-weight: 800;
+	/* line-height: 20px; */
+	right: 24px;
+	/* float: left; */
+}
 img {
 	max-width: 100%;
 }
@@ -430,7 +533,7 @@ img {
 	left: 48px;
 	position: absolute;
 	top: 270px;
-	width: 415px;
+	/* width: 415px; */
 }
 
 .card-footer-2 {
@@ -576,7 +679,7 @@ img {
 	padding: 10px 0 0 0;
 	/* position: absolute; */
 	text-align: center;
-	width: 298px;
+	/* width: 298px; */
 }
 
 .checked {
@@ -585,17 +688,22 @@ img {
 }
 
 .rating {
-	width: 298px;
+	/* width: 298px; */
 	text-align: center;
 	letter-spacing: 4px;
 }
-
+.rating2 {
+	/* width: 298px; */
+	text-align: left;
+	letter-spacing: 1px;
+	margin-left: 0 !important;
+}
 /* .bottom-part {
 	position: relative;
 } */
 
 .product-footer {
-	width: 298px;
+	/* width: 298px; */
 	text-align: center;
 }
 
@@ -708,13 +816,93 @@ img {
 	float: right;
 	text-align: left;
 	width: 200px;
-	padding: 10px;
+	/* padding: 10px; */
 }
 
 .date-box {
 	color: var(--lightGrey);
 	font-size: 18px;
 	font-weight: 500;
+}
+
+/* Featured Products Component */
+
+.featuredProduct {
+	display: inline-block;
+}
+
+.featuredProduct img {
+	margin-right: 20px;
+}
+
+.featuredProduct .content {
+	max-width: 360px;
+}
+
+.featuredProduct span:first-child {
+	display: block;
+}
+
+.featuredProduct span {
+	margin: 5px 0px;
+}
+
+.featuredProduct .text {
+	font-size: 23px;
+	/* line-height: 27px; */
+}
+
+.checked {
+	color: var(--yellow);
+}
+
+.unchecked {
+	color: var(--gray);
+}
+
+.discountedPrice {
+	color: var(--red);
+	display: inline-block !important;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.actualPrice {
+	font-size: 20px;
+	color: var(--gray);
+}
+
+strike {
+	color: var(--gray);
+}
+
+.content div {
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 33px;
+	margin-left: 10px;
+}
+
+.text {
+	font-size: 23px;
+	/* line-height: 36px; */
+}
+
+.discountedPrice {
+	color: var(--blue);
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 180%;
+	letter-spacing: 0.5px;
+}
+
+.actualPrice {
+	font-size: 20px;
+	color: var(--gray);
+}
+
+.img-box1 {
+	float: left;
 }
 
 /* Side nav */
@@ -1106,7 +1294,54 @@ textarea:hover {
 }
 
 .footer {
-	background-color: var(--blue);
-	height: 680px;
+	background-color: var(--blueFooter);
+	height: 580px;
 	width: 100%;
+}
+
+.hr {
+	border-top: 2px solid var(--light);
+	color: var(--lightGrey);
+}
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 768px) {
+	.col,
+	.col-1,
+	.col-2 {
+		width: 33.33vw;
+	}
+	.col-3,
+	.col-4,
+	.col-5,
+	.col-6 {
+		width: 50%;
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 480px) {
+	.col,
+	.col-1,
+	.col-2,
+	.col-3,
+	.col-4,
+	.col-5,
+	.col-6,
+	.col-7,
+	.col-8,
+	.col-9,
+	.col-10,
+	.col-11 {
+		float: none;
+		margin-top: 30px;
+		width: 100%;
+	}
+	.container {
+		margin: 0 auto;
+	}
 }
